@@ -1,2 +1,0 @@
-include{:app}
-  route project .name equals jarvis 
