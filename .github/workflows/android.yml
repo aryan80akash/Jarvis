@@ -26,13 +26,13 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Set up Android SDK
+      - name: Set up Android SDK and accept licenses
         uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK components
-        run: |
-          sdkmanager "platforms;android-35"
-          sdkmanager "build-tools;35.0.0"
+        with:
+          accept-android-sdk-licenses: true
+          packages: |
+            platforms;android-35
+            build-tools;35.0.0
 
       - name: Build JARVIS APK
         run: gradle assembleDebug
